@@ -1035,7 +1035,7 @@ class FTPDriver extends AbstractHierarchicalFilesystemDriver {
 		}
 		// Strip trailing dots and return
 		$cleanFileName = preg_replace('/\\.*$/', '', $cleanFileName);
-		if (!$cleanFileName) {
+		if ($cleanFileName === false) {
 			throw new \TYPO3\CMS\Core\Resource\Exception\InvalidFileNameException(
 				'File name ' . $cleanFileName . ' is invalid.',
 				1320288991
